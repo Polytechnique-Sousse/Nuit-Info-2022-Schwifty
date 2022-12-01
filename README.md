@@ -1,17 +1,17 @@
-# Nuit-Info-2022-Schwifty
+# Nuit Info 2022 Schwifty
 
 # Django & react & node & HTML & SCSS & JS & PostgreSQL & mongo ...
 Template repository:
-* Django and PostgreSQL node mongo back-end
-* react, HTML, CSS, JS, SCSS Front-end
-* Build & test process
+* Django and PostgreSQL node back-end
+* HTML, CSS, JS, SCSS Front-end
 * Docker & kubernetes
 * CI/CD Jenkins
 
 
-# Critic Requirements:
+# Requirements:
 * Python 3.10
-YOU SHOULD INSTALL PYTHON 3.10 ON YOUR PC !
+* Node 14
+* Linux
 
 
 # Getting started:
@@ -20,6 +20,7 @@ YOU SHOULD INSTALL PYTHON 3.10 ON YOUR PC !
 ```
 python3 -m venv env
 ```
+
 2. Activate the virtual environment:
 ```
 source env/bin/activate
