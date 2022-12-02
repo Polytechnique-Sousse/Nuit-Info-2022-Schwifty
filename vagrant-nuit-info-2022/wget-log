@@ -1,0 +1,11 @@
+--2022-12-02 06:35:01--  https://apt.releases.hashicorp.com/gpg
+Resolving apt.releases.hashicorp.com (apt.releases.hashicorp.com)... 18.155.129.20, 18.155.129.86, 18.155.129.37, ...
+Connecting to apt.releases.hashicorp.com (apt.releases.hashicorp.com)|18.155.129.20|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 3195 (3.1K) [binary/octet-stream]
+Saving to: ‘STDOUT’
+
+-                                                0%[                                                                                                    ]       0  --.-KB/s               -                                              100%[===================================================================================================>]   3.12K  --.-KB/s    in 0s      
+
+2022-12-02 06:35:02 (2.22 GB/s) - written to stdout [3195/3195]
+
