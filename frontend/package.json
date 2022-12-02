@@ -1,7 +1,7 @@
 {
     "name": "django-template",
     "version": "0.1.0",
-    "description": "Tamplate repository: Django and mysql Backend - HTML, CSS, JS, SCSS and node Frontend - Build process - Docker - CI/CD",
+    "description": "Tamplate repository: Django and mysql Backend - HTML, CSS, JS, node Frontend - Build process - Docker - CI/CD",
     "watch": {
         "build:html": {
             "patterns": [
@@ -27,9 +27,9 @@
         },
         "build:css": {
             "patterns": [
-                "src/sass"
+                "src/css"
             ],
-            "extensions": "scss",
+            "extensions": "css",
             "quiet": false
         }
     },
@@ -54,7 +54,6 @@
         "build:fonts": "cpx \"src/fonts/**/*\" ../app/static/fonts/",
         "remove:css": "rimraf \"../app/static/css/**/*.css\"",
         "reset:css": "cpx \"src/css/**/*.css\" ../app/static/css/",
-        "build-css:sass": "sass --no-source-map src/sass/:src/css/",
         "build-css:concat": "cat src/css/*.css > ../app/static/css/main.css",
         "build-css:purge": "purgecss --config ./purgecss.config.js",
         "build-css:minify": "cleancss --batch --batch-suffix '' ../app/static/css/*.css",
@@ -90,7 +89,6 @@
         "postcss-cli": "^10.1.0",
         "purgecss": "^4.1.3",
         "rimraf": "^2.7.1",
-        "sass": "^1.56.1",
         "uglify-js": "^3.17.4"
     }
 }
