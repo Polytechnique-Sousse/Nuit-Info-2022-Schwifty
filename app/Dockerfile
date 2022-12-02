@@ -13,4 +13,3 @@ RUN chmod -R 755 /app/static
 RUN chmod -R 755 /app/media
 RUN chmod +x /app/scripts/*
 RUN mkdir -p /tmp/uwsgi/
-
