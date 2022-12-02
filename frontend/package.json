@@ -1,0 +1,100 @@
+{
+    "name": "django-template",
+    "version": "0.1.0",
+    "description": "Tamplate repository: Django and mysql Backend - HTML, CSS, JS, SCSS and node Frontend - Build process - Docker - CI/CD",
+    "watch": {
+        "build:html": {
+            "patterns": [
+                "src/html"
+            ],
+            "extensions": "html",
+            "quiet": false
+        },
+        "build:images": {
+            "patterns": [
+                "src/img"
+            ],
+            "extensions": "svg,png,jpg,ico",
+            "quiet": false
+        },
+        "build:js": {
+            "patterns": [
+                "src/js",
+                "src/js/**"
+            ],
+            "extensions": "js",
+            "quiet": false
+        },
+        "build:css": {
+            "patterns": [
+                "src/sass"
+            ],
+            "extensions": "scss",
+            "quiet": false
+        }
+    },
+    "scripts": {
+        "remove:html": "rimraf \"../app/templates/**/*.html\"",
+        "reset:html": "cpx \"src/html/**/*.html\" ../app/templates/",
+        "build-html:minify": "html-minifier --input-dir src/html/ --output-dir ../app/templates/ --file-ext html --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-tag-whitespace --use-short-doctype --minify-css true --minify-js true",
+        "build:html": "npm-run-all remove:html build-html:*",
+        "watch:html": "npm-watch build:html",
+        "remove:images": "rimraf \"../app/static/img/**/*\"",
+        "reset:images": "cpx \"src/img/**/*\" ../app/static/img/",
+        "build-images:convert2webp": "for file in $(find src/img/ -name '*.png' -or -name '*.jpg' -or -name '*.jpeg' -type f); do cwebp -q 50 \"$file\" -o \"${file%.*}.webp\"; done",
+        "build-images:minify": "cd src; for filePath in $(find img/ -name '*.png' -or -name '*.jpg' -or -name '*.jpeg' -or -name '*.webp' -type f); do imagemin $filePath --out-dir=../../app/static/$(dirname $filePath); done",
+        "build:images": "npm-run-all remove:images build-images:*",
+        "watch:images": "npm-watch build:images",
+        "remove:js": "rimraf \"../app/static/js/**/*.js\"",
+        "reset:js": "cpx \"src/js/**/*.js\" ../app/static/js/",
+        "build-js:minify": "uglifyjs src/js/*.js --compress --mangle --output ../app/static/js/scripts.js",
+        "build:js": "npm-run-all remove:js build-js:*",
+        "watch:js": "npm-watch build:js",
+        "remove:fonts": "rimraf \"../app/static/fonts/*\"",
+        "build:fonts": "cpx \"src/fonts/**/*\" ../app/static/fonts/",
+        "remove:css": "rimraf \"../app/static/css/**/*.css\"",
+        "reset:css": "cpx \"src/css/**/*.css\" ../app/static/css/",
+        "build-css:sass": "sass --no-source-map src/sass/:src/css/",
+        "build-css:concat": "cat src/css/*.css > ../app/static/css/main.css",
+        "build-css:purge": "purgecss --config ./purgecss.config.js",
+        "build-css:minify": "cleancss --batch --batch-suffix '' ../app/static/css/*.css",
+        "build:css": "npm-run-all remove:css build-css:*",
+        "watch:css": "npm-watch build:css",
+        "remove": "npm-run-all remove:*",
+        "reset": "npm-run-all remove reset:*",
+        "build": "npm-run-all remove build:*",
+        "watch": "npm-run-all --parallel watch:*"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/SidraChain/django-template.git"
+    },
+    "keywords": [],
+    "author": "Maher-Amara",
+    "bugs": {
+        "url": "https://github.com/SidraChain/django-template/issues"
+    },
+    "homepage": "https://github.com/SidraChain/django-template#readme",
+    "devDependencies": {
+        "autoprefixer": "^10.4.13",
+        "catw": "^1.0.1",
+        "clean-css-cli": "^5.6.1",
+        "cpx": "^1.5.0",
+        "css-concat": "^0.0.4",
+        "html-minifier": "^4.0.0",
+        "imagemin": "^8.0.1",
+        "imagemin-jpegtran": "^7.0.0",
+        "imagemin-pngquant": "^9.0.2",
+        "imagemin-web": "^1.1.1",
+        "npm-run-all": "^4.1.5",
+        "npm-watch": "^0.11.0",
+        "postcss-cli": "^10.1.0",
+        "purgecss": "^4.1.3",
+        "rimraf": "^2.7.1",
+        "sass": "^1.56.1",
+        "uglify-js": "^3.17.4"
+    },
+    "dependencies": {
+        "imagemin-cli": "^7.0.0"
+    }
+}
