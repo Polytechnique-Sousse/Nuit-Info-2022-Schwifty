@@ -67,14 +67,12 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/SidraChain/django-template.git"
+        "url": "git+https://github.com/Polytechnique-Sousse/Nuit-Info-2022-Schwifty/django-template.git"
     },
-    "keywords": [],
-    "author": "Maher-Amara",
     "bugs": {
-        "url": "https://github.com/SidraChain/django-template/issues"
+        "url": "https://github.com/Polytechnique-Sousse/Nuit-Info-2022-Schwifty/django-template/issues"
     },
-    "homepage": "https://github.com/SidraChain/django-template#readme",
+    "homepage": "https://github.com/Polytechnique-Sousse/Nuit-Info-2022-Schwifty/django-template#readme",
     "devDependencies": {
         "autoprefixer": "^10.4.13",
         "catw": "^1.0.1",
@@ -83,6 +81,7 @@
         "css-concat": "^0.0.4",
         "html-minifier": "^4.0.0",
         "imagemin": "^8.0.1",
+        "imagemin-cli": "^7.0.0",
         "imagemin-jpegtran": "^7.0.0",
         "imagemin-pngquant": "^9.0.2",
         "imagemin-web": "^1.1.1",
@@ -93,8 +92,5 @@
         "rimraf": "^2.7.1",
         "sass": "^1.56.1",
         "uglify-js": "^3.17.4"
-    },
-    "dependencies": {
-        "imagemin-cli": "^7.0.0"
     }
 }
