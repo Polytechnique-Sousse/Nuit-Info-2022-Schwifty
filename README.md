@@ -9,4 +9,3 @@ sudo apt update && sudo apt install vagrant
 vagrant plugin install vagrant-docker-compose
 ```
 vagrant up
-```
